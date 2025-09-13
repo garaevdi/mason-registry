@@ -20,7 +20,7 @@ source:
       bin: bin/vala-language-server
     - target: win
       run: |
-        meson -Dprefix="($pwd).path" build
+        meson -Dprefix="$pwd" -Dc_args=" -Wno-int-conversion -Wno-incompatible-function-pointer-types" build
         ninja -C build install
       bin: bin/vala-language-server.exe
 
